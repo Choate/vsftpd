@@ -1,0 +1,23 @@
+{
+  "name": "choate/vsftpd",
+  "description": "VSFtpd Web Manage",
+  "license": "",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "choate",
+      "email": "choate.yao@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Choate/vsftpd/"
+    }
+  ],
+  "require": {
+    "php": "5.5.0",
+    "yiisoft/yii2": "^2.0",
+    "yiisoft/yii2-bootstrap": "^2.0"
+  }
+}
