@@ -1,7 +1,8 @@
 {
   "name": "choate/vsftpd",
-  "description": "VSFtpd Web Manage",
-  "license": "",
+  "description": "VSFtpd Web Manage Module",
+  "type" : "yii2-extension",
+  "license": "GPL2.0",
   "version": "1.0.0",
   "authors": [
     {
@@ -12,12 +13,15 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/Choate/vsftpd/"
+      "url": "https://github.com/Choate/vsftpd"
     }
   ],
   "require": {
     "php": ">=5.5.0",
     "yiisoft/yii2": "^2.0",
     "yiisoft/yii2-bootstrap": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {"choate\\vsftpd\\": ""}
   }
 }
