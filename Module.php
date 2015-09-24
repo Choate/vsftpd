@@ -30,12 +30,17 @@ class Module extends \yii\base\Module
 
     public $vsftpdLocalRoot = '';
 
+    public $vsftpdUser = '';
+
     public $newFileMode = 0666;
 
     public function init() {
         parent::init();
         if (!is_writeable($this->vsftpdUserConfigPath)) {
             throw new InvalidConfigException('vsftpdUserConfigPath');
+        }
+        if (empty($this->vsftpdUser)) {
+            throw new InvalidConfigException('vsftpdUser');
         }
     }
 

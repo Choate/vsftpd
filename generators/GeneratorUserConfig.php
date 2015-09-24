@@ -43,7 +43,8 @@ class GeneratorUserConfig extends Component
         }
         $model = $this->getModel();
 
-        return file_put_contents("{$path}/{$model->username}", $model->buildConfigBySetting());
+        $result = file_put_contents("{$path}/{$model->username}", $model->buildConfigBySetting());
+        chown("{$path}/{$model->username}", $this->getModule()->vsftpdUser);
     }
 
     /**
