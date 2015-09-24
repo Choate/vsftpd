@@ -31,7 +31,6 @@ class GeneratorUserConfig extends Component
     protected $_model;
 
     /**
-     *
      * @since 1.0
      * @author Choate <choate.yao@gmail.com>
      * @return bool|int
@@ -42,13 +41,14 @@ class GeneratorUserConfig extends Component
             return false;
         }
         $model = $this->getModel();
-
         $result = file_put_contents("{$path}/{$model->username}", $model->buildConfigBySetting());
-        chown("{$path}/{$model->username}", $this->getModule()->vsftpdUser);
+        chmod("{$path}/{$model->username}", $this->getModule()->newFileMode);
+        exec("sudo chown " . $this->getModule()->vsftpdUser . " {$path}/{$model->username}");
+
+        return $result;
     }
 
     /**
-     *
      * @since 1.0
      * @author Choate <choate.yao@gmail.com>
      * @return bool
