@@ -36,7 +36,7 @@ class GeneratorUserConfigTest extends TestCase
         /* @var User $model */
         $model = $this->model->findOne(['username' => 'choateyao']);
         $this->generator->setModel($model);
-        $this->generator->setModule(new Module('vsftpd', null, ['vsftpdUserConfigPath' => '/tmp']));
+        $this->generator->setModule(new Module('vsftpd', null, ['vsftpdUserConfigPath' => '/tmp', 'vsftpdUser' => 'choate']));
         $this->assertEquals(strlen($model->buildConfigBySetting()), $this->generator->generate());
         $this->assertFileExists('/tmp/choateyao');
     }

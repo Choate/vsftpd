@@ -41,7 +41,7 @@ class User extends ActiveRecord
             ['username', 'match', 'pattern' => '#^[a-z][a-z0-9]+$#'],
             ['password', 'string', 'min' => 6, 'max' => 45],
             ['name', 'string', 'max' => 45],
-            ['cmdsDenied', 'in', 'range' => array_keys($this->getFileOperationItem())],
+            ['cmdsDenied', 'in', 'allowArray' => true, 'range' => array_keys($this->getFileOperationItem())],
             ['downloadEnable', 'in', 'range' => array_keys($this->getDownloadStatusItem())],
             ['writeEnable', 'in', 'range' => array_keys($this->getWriteEnableStatusItem())],
             ['localRoot', 'string'],
