@@ -42,7 +42,7 @@ class GeneratorUserConfig extends Component
         }
         $model = $this->getModel();
         $result = file_put_contents("{$path}/{$model->username}", $model->buildConfigBySetting());
-        chmod("{$path}/{$model->username}", $this->getModule()->newFileMode);
+        @chmod("{$path}/{$model->username}", $this->getModule()->newFileMode);
         exec("sudo chown " . $this->getModule()->vsftpdUser . " {$path}/{$model->username}");
 
         return $result;
