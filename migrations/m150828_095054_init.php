@@ -6,7 +6,7 @@ use yii\db\Migration;
 class m150828_095054_init extends Migration
 {
     public function up() {
-        $this->createTable('vsftpd_user', [
+        $this->createTable('%vsftpd_user', [
                 'id'       => 'pk',
                 'username' => Schema::TYPE_STRING . '(45) NOT NULL',
                 'password' => Schema::TYPE_STRING . '(45) NOT NULL',
