@@ -12,8 +12,8 @@ use yii\bootstrap\Button;
 $form = ActiveForm::begin();
 echo $this->render('_form', ['model' => $model, 'form' => $form]);
 echo Button::widget([
-    'label' => '保存并生成配置',
-    'options' => ['class' => 'btn-primary'],
-]
+        'label' => '保存并生成配置',
+        'options' => ['class' => 'btn-primary'],
+    ]
 );
 $form->end();
